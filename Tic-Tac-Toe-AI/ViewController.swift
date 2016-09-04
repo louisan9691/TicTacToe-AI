@@ -158,13 +158,13 @@ class ViewController: UIViewController {
     }
     
     func rowCheck(value:Int) -> [String]? {
-        var acceptableFinds = ["011","110","101"]
+        let acceptableFinds = ["011","110","101"]
         var findFuncs = [self.checkThis]
         var algorthmResults = findFuncs[0](value)
         
         for algorthm in findFuncs{
             var algorthmResults = algorthm(value)
-            var findPattern = acceptableFinds.indexOf(algorthmResults[1])
+            let findPattern = acceptableFinds.indexOf(algorthmResults[1])
             if findPattern != nil {
                 return algorthmResults
             }
@@ -209,7 +209,7 @@ class ViewController: UIViewController {
         
         
         func firstAvailable(isCorner: Bool) -> Int?{
-            var spots = isCorner ? [1,3,7,9] : [2,4,6,8]
+            let spots = isCorner ? [1,3,7,9] : [2,4,6,8]
             for spot in spots {
                 if !isOccupied(spot){
                     return spot
